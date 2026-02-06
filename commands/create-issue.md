@@ -33,12 +33,12 @@ Based on your research, classify the issue:
 
 | Type | Title Prefix | Description |
 |------|-------------|-------------|
-| Bug | `bug: ...` | Something is broken or behaving incorrectly |
-| Feature | `feat: ...` | Net-new functionality |
-| Enhancement | `enhance: ...` | Improvement to existing functionality |
-| Refactor | `refactor: ...` | Code restructuring with no behavior change |
-| Documentation | `docs: ...` | Documentation additions or corrections |
-| Chore | `chore: ...` | Maintenance, dependencies, tooling |
+| Bug | 🐛 | Something is broken or behaving incorrectly |
+| Feature | ✨ | Net-new functionality |
+| Enhancement | 🔧 | Improvement to existing functionality |
+| Refactor | ♻️ | Code restructuring with no behavior change |
+| Documentation | 📝 | Documentation additions or corrections |
+| Chore | 🧹 | Maintenance, dependencies, tooling |
 
 ## Issue Body Template
 
@@ -104,16 +104,26 @@ Do **not** create new labels.
 
 ## Creation
 
-1. **Create the issue** using `gh issue create`:
+1. **Create the issue** using `gh issue create`. You **must** always set the `--type` flag based on the issue classification:
+
+   | Classification | `--type` value |
+   |----------------|---------------|
+   | Bug | `Bug` |
+   | Feature | `Feature` |
+   | Enhancement | `Feature` |
+   | Refactor | `Task` |
+   | Documentation | `Task` |
+   | Chore | `Task` |
+
    ```bash
-   gh issue create --title "<title>" --body "<body>" --label "<label1>,<label2>"
+   gh issue create --title "<title>" --body "<body>" --label "<label1>,<label2>" --type "<type>"
    ```
    Use a HEREDOC for the body to preserve formatting:
    ```bash
-   gh issue create --title "feat: Add user session timeout" --body "$(cat <<'EOF'
+   gh issue create --title "✨ Add user session timeout" --body "$(cat <<'EOF'
    <full issue body here>
    EOF
-   )"
+   )" --type "Feature"
    ```
 
 2. **Assign the issue** to the current user (`gh issue edit <number> --add-assignee @me`). If assignment fails (e.g., not a collaborator), skip silently.
