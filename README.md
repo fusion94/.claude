@@ -25,7 +25,8 @@ This repository tracks those commands in version control so they can be shared, 
 
 ```
 ~/.claude/
-├── .gitignore        # Tracks .gitignore, README, commands/, and scripts/
+├── .gitignore        # Tracks .gitignore, LICENSE, README, commands/, and scripts/
+├── LICENSE           # Apache License 2.0
 ├── commands/         # Slash command definitions (markdown files)
 │   ├── add-to-changelog.md
 │   ├── analyze-issue.md
@@ -86,4 +87,4 @@ vim ~/.claude/commands/my-command.md
 
 ## License
 
-Personal configuration repository. Use and adapt as you see fit.
+This project is licensed under the [Apache License 2.0](LICENSE).

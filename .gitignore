@@ -3,6 +3,7 @@
 
 # Except .gitignore, commands, and scripts directories
 !.gitignore
+!LICENSE
 !README.md
 !commands/
 !commands/**
