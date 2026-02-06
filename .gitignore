@@ -1,7 +1,10 @@
 # Ignore everything
 *
 
-# Except .gitignore and the commands directory
+# Except .gitignore, commands, and scripts directories
 !.gitignore
+!README.md
 !commands/
 !commands/**
+!scripts/
+!scripts/**
