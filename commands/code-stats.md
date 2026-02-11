@@ -105,13 +105,13 @@ Use `--since=<start>` and `--until=<end>` on all `git log` commands. If an autho
 
    13. **Top Contributors** — By commits, by lines added, by merged PRs
 
-   14. **Changes Since Last Report** — If a previous `code-stats.json` exists, read it and include a delta section comparing key metrics (commits, PRs, lines added, lines removed, issues created, issues closed) to the previous run. Show changes as +/- values and percentage change.
+   14. **Changes Since Last Report** — Look for the most recent previous `code-stats-*.json` file in `/Users/guntharp/Code/fusion94/` (excluding today's file). If one exists, read it and include a delta section comparing key metrics (commits, PRs, lines added, lines removed, issues created, issues closed) to the previous run. Show changes as +/- values and percentage change.
 
    15. **Notes** — Methodology notes (including: merge commits excluded, generated/vendored files excluded, binary files excluded, list any repos where GitHub data was unavailable), caveats, generation date
 
 5. Save two files to `/Users/guntharp/Code/fusion94/` (always use this directory regardless of the current working directory):
-   - `/Users/guntharp/Code/fusion94/code-stats.md` — the human-readable report
-   - `/Users/guntharp/Code/fusion94/code-stats.json` — machine-readable metrics for future delta comparisons, structured as:
+   - `/Users/guntharp/Code/fusion94/code-stats-{YYYY-MM-DD}.md` — the human-readable report (where `{YYYY-MM-DD}` is today's date, e.g. `code-stats-2026-02-10.md`)
+   - `/Users/guntharp/Code/fusion94/code-stats-{YYYY-MM-DD}.json` — machine-readable metrics for future delta comparisons, structured as:
      ```json
      {
        "generated": "ISO-8601 timestamp",
@@ -122,7 +122,7 @@ Use `--since=<start>` and `--until=<end>` on all `git log` commands. If an autho
      }
      ```
 
-6. Open the report when complete: try `code -n /Users/guntharp/Code/fusion94/code-stats.md`, but if the `code` command is not available, skip this step silently.
+6. Open the report when complete: try `code -n /Users/guntharp/Code/fusion94/code-stats-{YYYY-MM-DD}.md` (using today's date), but if the `code` command is not available, skip this step silently.
 
 ## Output Format
 
